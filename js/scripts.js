@@ -24,28 +24,34 @@ function Pizza (pizzaSize, toppingsList, firstName, lastName, phoneNumber) {
   this.phoneNumber = phoneNumber;
 }
 
-Pizza.prototype.pizzaCost = function() {
-  return this.firstName + " " + this.lastName;
-}
+Order.prototype.toppingList = function(id){
+  order.pizzas[id].toppingsList.forEach(function(id){
+    console.log(id);
+  });
+};
+
+
+// function topplingList(pizzaID){
+// pizza.toppingsList.forEach(function(topping){
+//   return ('<li class="list-group-item">'+topping+'</li>')
+// });
+
+
+
 
 //---------- FRONT-END LOGIC ----------
 
 var order = new Order();
-var pizza = new Pizza();
 
 function displayPizzas(order) {
   var pizzaDisplay = $("div.pizzaDisplay");
   var htmlForPizzaDisplay = "";
+  var htmlForToppingDisplay = "";
   order.pizzas.forEach(function(pizza) {
-    htmlForPizzaDisplay += '<div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +'</div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">'+pizza.toppingsList+'</li></ul></div><div class="card-footer bg-secondary">Price: </div></div>'
-
-    ;
+    htmlForPizzaDisplay += '<div class="col-md-4 mb-4"><div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +'</div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">Toppings:</li><li class="list-group-item">'+pizza.toppingsList+'</li></ul></div><div class="card-footer bg-secondary">Price: </div></div></div>';
   });
   pizzaDisplay.html(htmlForPizzaDisplay);
 };
-
-
-
 
 $(document).ready(function(){
   $("form#orderForm").submit(function(event){
@@ -61,11 +67,11 @@ $(document).ready(function(){
     var lastName = $("#lastName").val();
     var phoneNumber = $("#phoneNumber").val();
 
-    var newPizza = new Pizza(pizzaSize, toppingsList, firstName, lastName, phoneNumber);
+    var pizza = new Pizza(pizzaSize, toppingsList, firstName, lastName, phoneNumber);
 
-    order.addPizza(newPizza);
+    order.addPizza(pizza);
 
-    console.log(order.pizzas);
     displayPizzas(order)
+    console.log("order.pizzas: ",order.pizzas[0].toppingsList);
   });
 });
