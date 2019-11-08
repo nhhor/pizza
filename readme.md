@@ -31,7 +31,9 @@ The fully deployed project is hosted on GH-Pages [HERE](https://nhhor.github.io/
 |-|-|-|
 |Allow the user to choose toppings and size for the pizza they'd like to order.|[large][olives][pepperoni]|"large", "olives", "pepperoni"|
 |Create a pizza object constructor with properties for toppings and size.|[large][olives][pepperoni]|{Size: "large", Toppings: ["olives", "pepperoni"]}|
-|Create a prototype method for the cost of a pizza depending on the selections chosen. Use your own formula for this.|[large][olives][pepperoni]|$12.00|
+|Create a prototype method for the cost of a pizza depending on the selections chosen. Use your own formula for this.|[large][olives][pepperoni]|$18.00|
+|<center>''</center>|[small][mushrooms][onions]|$10.00|
+|Create a prototype method for the total order cost.|[large][olives][pepperoni] & [small][mushrooms][onions]|$28.00|
 
 ## References
 * None
