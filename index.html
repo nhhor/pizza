@@ -17,28 +17,43 @@
       <form id="orderForm">
         <h4>Please place your order here:</h4>
 
+        <div class="form-inline">
+          <div class="form-group ml-3">
+            <label for="firstName">First name:</label>
+            <input type="text" class="form-control mx-1" id="firstName">
+          </div>
+          <div class="form-group ml-3">
+            <label for="lastName">Last name:</label>
+            <input type="text" class="form-control mx-1" id="lastName">
+          </div>
+          <div class="form-group ml-3">
+            <label for="phoneNumber">Phone number:</label>
+            <input type="text" class="form-control mx-1" id="phoneNumber">
+          </div>
+        </div>
+
         <legend class="form-check-label" for="pizzaSize">Pizza Size: </legend>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pizzaSize" value="smallSize">
+          <input class="form-check-input ml-3" type="radio" name="pizzaSize" value="smallSize">
           <label class="form-check-label" for="smallSize">Small</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pizzaSize" value="largeSize">
+          <input class="form-check-input ml-3" type="radio" name="pizzaSize" value="largeSize">
           <label class="form-check-label" for="largeSize">Large</label>
         </div>
 
         <legend class="form-check-label" for="pizzaToppings">Select toppings: </legend>
         <div class="form-group">
-          <input type="checkbox" name="pizzaToppings" value="pepperoni"> Pepperoni<br>
-          <input type="checkbox" name="pizzaToppings" value="mushrooms"> Mushrooms<br>
-          <input type="checkbox" name="pizzaToppings" value="onions"> Onions<br>
-          <input type="checkbox" name="pizzaToppings" value="sausage"> Sausage<br>
-          <input type="checkbox" name="pizzaToppings" value="bacon"> Bacon<br>
-          <input type="checkbox" name="pizzaToppings" value="extraCheese"> Extra cheese<br>
-          <input type="checkbox" name="pizzaToppings" value="blackOlives"> Black olives<br>
-          <input type="checkbox" name="pizzaToppings" value="greenPeppers"> Green peppers<br>
-          <input type="checkbox" name="pizzaToppings" value="pineapple"> Pineapple<br>
-          <input type="checkbox" name="pizzaToppings" value="spinach"> Spinach<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="pepperoni"> Pepperoni<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="mushrooms"> Mushrooms<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="onions"> Onions<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="sausage"> Sausage<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="bacon"> Bacon<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="extraCheese"> Extra cheese<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="blackOlives"> Black olives<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="greenPeppers"> Green peppers<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="pineapple"> Pineapple<br>
+          <input class="ml-3"type="checkbox" name="pizzaToppings" value="spinach"> Spinach<br>
 
 
           <button class="btn btn-danger" type="submit">Submit your order!</button>
