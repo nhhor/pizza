@@ -24,11 +24,16 @@ function Pizza (pizzaSize, toppingsList, firstName, lastName, phoneNumber) {
   this.cost = 0
 }
 
-// Order.prototype.toppingsList = function(){
-//   order.pizza.toppingsList.forEach(function(){
-//     return "id";
-//   });
+
+// Order.prototype.toppingsListPrint = function(){
+//
+//
+//   console.log(order);
+//   // this.toppingsList.forEach(function(topping){
+//   // });
 // };
+
+
 
 
 //---------- FRONT-END LOGIC ----------
@@ -41,8 +46,9 @@ function displayPizzas(order) {
   var htmlForToppingDisplay = "";
   order.pizzas.forEach(function(pizza) {
     htmlForPizzaDisplay += '<div class="col-md-4 mb-4"><div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +'</div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">Toppings:</li><li class="list-group-item">'+pizza.toppingsList.forEach(function(topping){
-      return topping;
-    })+'</li></ul></div><div class="card-footer bg-secondary">Price: </div></div></div>';
+      console.log(topping);
+      return htmlForToppingDisplay += topping;
+      })+'</li></ul></div><div class="card-footer bg-secondary">Price: </div></div></div>';
   });
   pizzaDisplay.html(htmlForPizzaDisplay);
 };
@@ -54,18 +60,18 @@ $(document).ready(function(){
     var pizzaSize = $("input:radio[name=pizzaSize]:checked").val();
     var toppingsList = []
     $("input:checkbox[name=pizzaToppings]:checked").each(function(){
-      var workTransportationMode = $(this).val();
-      toppingsList.push(workTransportationMode);
+      var usersToppings = $(this).val();
+      toppingsList.push(usersToppings);
     });
     var firstName = $("#firstName").val();
     var lastName = $("#lastName").val();
     var phoneNumber = $("#phoneNumber").val();
 
     var pizza = new Pizza(pizzaSize, toppingsList, firstName, lastName, phoneNumber);
-
     order.addPizza(pizza);
 
     displayPizzas(order)
     console.log("order.pizzas: ",order.pizzas);
+
   });
 });
