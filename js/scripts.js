@@ -1,10 +1,22 @@
 //---------- BACK-END LOGIC ----------
 
 function Order() {
-  this.pizza = [];
+  this.pizzas = [],
+  this.currentId = 0
 }
 
-function Pizza (pizzaSize, toppingsList, firstName, lastName, phontNumber) {
+Order.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizzas.push(pizza);
+}
+
+Order.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+}
+
+
+function Pizza (pizzaSize, toppingsList, firstName, lastName, phoneNumber) {
   this.pizzaSize = pizzaSize;
   this.toppingsList = toppingsList;
   this.firstName = firstName;
@@ -15,16 +27,29 @@ function Pizza (pizzaSize, toppingsList, firstName, lastName, phontNumber) {
 
 
 //---------- FRONT-END LOGIC ----------
+
+var order = new Order();
+
 $(document).ready(function(){
   $("form#orderForm").submit(function(event){
     event.preventDefault();
 
-    toppingsList = []
+    var pizzaSize = $("input:radio[name=pizzaSize]:checked").val();
+    var toppingsList = []
     $("input:checkbox[name=pizzaToppings]:checked").each(function(){
       var workTransportationMode = $(this).val();
       toppingsList.push(workTransportationMode);
     });
-    console.log(toppingsList);
+    var firstName = $("#firstName").val();
+    var lastName = $("#lastName").val();
+    var phoneNumber = $("#phoneNumber").val();
+
+    var newPizza = new Pizza(pizzaSize, toppingsList, firstName, lastName, phoneNumber);
+
+    order.addPizza(newPizza);
+
+    console.log(order.pizzas);
+
 
   });
 });
