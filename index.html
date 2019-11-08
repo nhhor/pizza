@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <script src="js/jquery-3.4.1.js" charset="utf-8"></script>
-    <script src="js/scripts.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Pizza is an Object, Inc.</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Pizza is an Object, Inc.</h1>
-      </div>
-      <div class="orderSection">
-        <form class="orderForm">
-          <h4>Please place your order here:</h4>
+<head>
+  <meta charset="utf-8">
+  <script src="js/jquery-3.4.1.js" charset="utf-8"></script>
+  <script src="js/scripts.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Pizza is an Object, Inc.</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Pizza is an Object, Inc.</h1>
+    </div>
+    <div class="orderSection">
+      <form id="orderForm">
+        <h4>Please place your order here:</h4>
+
+        <legend class="form-check-label" for="pizzaSize">Pizza Size: </legend>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="pizzaSize" id="smallSize">
+          <label class="form-check-label" for="smallSize">Small</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="pizzaSize" id="largeSize">
+          <label class="form-check-label" for="largeSize">Large</label>
+        </div>
+
+        <legend class="form-check-label" for="pizzaToppings">Select toppings: </legend>
+        <div class="form-group">
+          <input type="checkbox" name="pizzaToppings" value="pepperoni"> Pepperoni<br>
+          <input type="checkbox" name="pizzaToppings" value="mushrooms"> Mushrooms<br>
+          <input type="checkbox" name="pizzaToppings" value="onions"> Onions<br>
+          <input type="checkbox" name="pizzaToppings" value="sausage"> Sausage<br>
+          <input type="checkbox" name="pizzaToppings" value="bacon"> Bacon<br>
+          <input type="checkbox" name="pizzaToppings" value="extraCheese"> Extra cheese<br>
+          <input type="checkbox" name="pizzaToppings" value="blackOlives"> Black olives<br>
+          <input type="checkbox" name="pizzaToppings" value="greenPeppers"> Green peppers<br>
+          <input type="checkbox" name="pizzaToppings" value="pineapple"> Pineapple<br>
+          <input type="checkbox" name="pizzaToppings" value="spinach"> Spinach<br>
           
-          <legend class="form-check-label" for="pizzaSize">Pizza Size: </legend>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="pizzaSize" id="smallSize">
-            <label class="form-check-label" for="smallSize">Small</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="pizzaSize" id="largeSize">
-            <label class="form-check-label" for="largeSize">Large</label>
-          </div>
-
-
-
 
           <button class="btn btn-danger" type="submit">Submit your order!</button>
         </form>
@@ -37,4 +48,4 @@
       </div>
     </div>
   </body>
-</html>
+  </html>
