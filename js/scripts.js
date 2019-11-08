@@ -17,7 +17,7 @@ Order.prototype.assignId = function() {
 };
 
 Order.prototype.assignPrice = function(pizza) {
-  if (pizza.pizzaSize === "smallSize") {
+  if (pizza.pizzaSize === "Small") {
     toppingCount = 0
     pizza.toppingsList.forEach(function(topping){
       toppingCount += 1;
@@ -25,7 +25,7 @@ Order.prototype.assignPrice = function(pizza) {
     });
     return toppingCount + 8;
   }
-  else if (pizza.pizzaSize === "largeSize") {
+  else if (pizza.pizzaSize === "Large") {
     toppingCount = 0
     pizza.toppingsList.forEach(function(topping){
       toppingCount += 2;
@@ -67,9 +67,14 @@ var order = new Order();
 function displayPizzas(order) {
   var pizzaDisplay = $("div.pizzaDisplay");
   var htmlForPizzaDisplay = "";
-  var htmlForToppingDisplay = "";
   order.pizzas.forEach(function(pizza) {
-    htmlForPizzaDisplay += '<div class="col-md-4 mb-4"><div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +'</div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">Toppings:</li><li class="list-group-item">'+pizza.toppingsList+'</li></ul></div><div class="card-footer bg-secondary">Price: </div></div></div>';
+    var htmlForToppingDisplay = "";
+    pizza.toppingsList.forEach(function(topping){
+      htmlForToppingDisplay += '<li class="list-group-item pl-4 py-0">'+topping+'</li>';
+    });
+
+    htmlForPizzaDisplay += '<div class="col-md-4 mb-4"><div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +' ('+pizza.pizzaSize+') </div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">Toppings:</li>'+htmlForToppingDisplay+'</ul></div><div class="card-footer bg-secondary">Price: $'+pizza.price.toFixed(2)+'</div></div></div>';
+
   });
   pizzaDisplay.html(htmlForPizzaDisplay);
 };
