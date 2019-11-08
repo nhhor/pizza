@@ -2,6 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <script src="js/jquery-3.4.1.js" charset="utf-8"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Pizza is an Object, Inc.</title>
   </head>
   <body>
@@ -9,7 +13,26 @@
       <div class="jumbotron">
         <h1>Pizza is an Object, Inc.</h1>
       </div>
-      <div class="">
+      <div class="orderSection">
+        <form class="orderForm">
+          <h4>Please place your order here:</h4>
+          
+          <legend class="form-check-label" for="pizzaSize">Pizza Size: </legend>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pizzaSize" id="smallSize">
+            <label class="form-check-label" for="smallSize">Small</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pizzaSize" id="largeSize">
+            <label class="form-check-label" for="largeSize">Large</label>
+          </div>
+
+
+
+
+          <button class="btn btn-danger" type="submit">Submit your order!</button>
+        </form>
+
 
       </div>
     </div>
