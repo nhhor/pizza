@@ -45,19 +45,13 @@ function Pizza (pizzaSize, toppingsList, firstName, lastName, phoneNumber) {
   this.phoneNumber = phoneNumber
 };
 
-// Order.prototype.toppingsListPrint = function(order){
-//   var pizzaDisplay2 = "";
-//   var htmlForToppingDisplay = "";
-//   order.pizzas.forEach(function(pizza){
-//     pizza.toppingsList.forEach(function(topping){
-//       console.log(topping);
-//       htmlForToppingDisplay += '<li class="list-group-item">'+topping+'</li>';
-//       })
-//   });
-//   pizzaDisplay2.html(htmlForPizzaDisplay);
-// };
-
-
+function total(){
+  totalPrice = 0;
+  for (var i = 0; i < order.pizzas.length; i++) {
+    totalPrice += order.pizzas[i].price
+    // console.log("total: ",order.pizzas[i].price);
+  }
+}
 
 
 //---------- FRONT-END LOGIC ----------
@@ -70,11 +64,9 @@ function displayPizzas(order) {
   order.pizzas.forEach(function(pizza) {
     var htmlForToppingDisplay = "";
     pizza.toppingsList.forEach(function(topping){
-      htmlForToppingDisplay += '<li class="list-group-item pl-4 py-0">'+topping+'</li>';
+      htmlForToppingDisplay += '<li class="list-group-item pl-4 py-0 bg-transparent">'+topping+'</li>';
     });
-
-    htmlForPizzaDisplay += '<div class="col-md-4 mb-4"><div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +' ('+pizza.pizzaSize+') </div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">Toppings:</li>'+htmlForToppingDisplay+'</ul></div><div class="card-footer bg-secondary">Price: $'+pizza.price.toFixed(2)+'</div></div></div>';
-
+    htmlForPizzaDisplay += '<div class="col-md-4 mb-4"><div class="card"><div class="card-header bg-danger">Pizza # '+ pizza.id +' ('+pizza.pizzaSize+') </div><div class="card-body bg-warning"><ul class="list-group list-group-flush "><li class="list-group-item bg-danger py-0">Toppings:</li>'+htmlForToppingDisplay+'</ul></div><div class="card-footer bg-secondary">Price: $'+pizza.price.toFixed(2)+'</div></div></div>';
   });
   pizzaDisplay.html(htmlForPizzaDisplay);
 };
@@ -97,7 +89,9 @@ $(document).ready(function(){
     order.addPizza(pizza);
 
     displayPizzas(order)
-    console.log("order.pizzas: ",order.pizzas);
+
+    total();
+    $(".totalPrice").text(totalPrice.toFixed(2));
 
   });
 });
