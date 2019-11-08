@@ -15,28 +15,20 @@ Order.prototype.assignId = function() {
   return this.currentId;
 }
 
-
 function Pizza (pizzaSize, toppingsList, firstName, lastName, phoneNumber) {
-  this.pizzaSize = pizzaSize;
-  this.toppingsList = toppingsList;
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.phoneNumber = phoneNumber;
+  this.pizzaSize = pizzaSize,
+  this.toppingsList = toppingsList,
+  this.firstName = firstName,
+  this.lastName = lastName,
+  this.phoneNumber = phoneNumber,
+  this.cost = 0
 }
 
-Order.prototype.toppingList = function(id){
-  order.pizzas[id].toppingsList.forEach(function(id){
-    console.log(id);
-  });
-};
-
-
-// function topplingList(pizzaID){
-// pizza.toppingsList.forEach(function(topping){
-//   return ('<li class="list-group-item">'+topping+'</li>')
-// });
-
-
+// Order.prototype.toppingsList = function(){
+//   order.pizza.toppingsList.forEach(function(){
+//     return "id";
+//   });
+// };
 
 
 //---------- FRONT-END LOGIC ----------
@@ -48,7 +40,9 @@ function displayPizzas(order) {
   var htmlForPizzaDisplay = "";
   var htmlForToppingDisplay = "";
   order.pizzas.forEach(function(pizza) {
-    htmlForPizzaDisplay += '<div class="col-md-4 mb-4"><div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +'</div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">Toppings:</li><li class="list-group-item">'+pizza.toppingsList+'</li></ul></div><div class="card-footer bg-secondary">Price: </div></div></div>';
+    htmlForPizzaDisplay += '<div class="col-md-4 mb-4"><div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +'</div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">Toppings:</li><li class="list-group-item">'+pizza.toppingsList.forEach(function(topping){
+      return topping;
+    })+'</li></ul></div><div class="card-footer bg-secondary">Price: </div></div></div>';
   });
   pizzaDisplay.html(htmlForPizzaDisplay);
 };
@@ -72,6 +66,6 @@ $(document).ready(function(){
     order.addPizza(pizza);
 
     displayPizzas(order)
-    console.log("order.pizzas: ",order.pizzas[0].toppingsList);
+    console.log("order.pizzas: ",order.pizzas);
   });
 });
