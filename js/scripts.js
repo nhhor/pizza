@@ -24,12 +24,26 @@ function Pizza (pizzaSize, toppingsList, firstName, lastName, phoneNumber) {
   this.phoneNumber = phoneNumber;
 }
 
-
-
+Pizza.prototype.pizzaCost = function() {
+  return this.firstName + " " + this.lastName;
+}
+console.log(pizzaCost());
 
 //---------- FRONT-END LOGIC ----------
 
 var order = new Order();
+
+function displayPizzas(order) {
+  var pizzaDisplay = $("div.pizzaDisplay");
+  var htmlForPizzaDisplay = "";
+  order.pizzas.forEach(function(pizza) {
+    htmlForPizzaDisplay += '<div class="card"><div class="card-header bg-info">Pizza # '+ pizza.id +'</div><ul class="list-group list-group-flush"><li class="list-group-item bg-secondary">topping 1</li></ul></div>';
+  });
+  pizzaDisplay.html(htmlForPizzaDisplay);
+};
+
+
+
 
 $(document).ready(function(){
   $("form#orderForm").submit(function(event){
@@ -50,7 +64,6 @@ $(document).ready(function(){
     order.addPizza(newPizza);
 
     console.log(order.pizzas);
-
-
+    displayPizzas(order)
   });
 });
