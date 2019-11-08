@@ -27,17 +27,19 @@ function Pizza (pizzaSize, toppingsList, firstName, lastName, phoneNumber) {
 Pizza.prototype.pizzaCost = function() {
   return this.firstName + " " + this.lastName;
 }
-console.log(pizzaCost());
 
 //---------- FRONT-END LOGIC ----------
 
 var order = new Order();
+var pizza = new Pizza();
 
 function displayPizzas(order) {
   var pizzaDisplay = $("div.pizzaDisplay");
   var htmlForPizzaDisplay = "";
   order.pizzas.forEach(function(pizza) {
-    htmlForPizzaDisplay += '<div class="card"><div class="card-header bg-info">Pizza # '+ pizza.id +'</div><ul class="list-group list-group-flush"><li class="list-group-item bg-secondary">topping 1</li></ul></div>';
+    htmlForPizzaDisplay += '<div class="card"><div class="card-header bg-primary">Pizza # '+ pizza.id +'</div><div class="card-body bg-info"><ul class="list-group list-group-flush "><li class="list-group-item">'+pizza.toppingsList+'</li></ul></div><div class="card-footer bg-secondary">Price: </div></div>'
+
+    ;
   });
   pizzaDisplay.html(htmlForPizzaDisplay);
 };
