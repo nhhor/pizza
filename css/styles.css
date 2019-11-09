@@ -6,3 +6,43 @@ body {
   background-repeat: no-repeat;
   width: 100vw;
 }
+
+h1 {
+  text-align: center;
+}
+
+.orderSection {
+  padding-top: 20px;
+  padding-left: 20px;
+  /* background-color: red; */
+  background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1));
+  border-radius: 5%;
+}
+
+.btn {
+  margin-left: 30px;
+}
+
+.confirmationSection {
+  background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1));
+  border-radius: 5%;
+  padding-top: 20px;
+  display: none;
+}
+
+.bg-danger {
+  /* background-color: #ff6347 ; */
+  background: rgb(255,100,70) !important;
+  background: linear-gradient(90deg, rgba(255,100,70,0.9) 0%, rgba(255,100,70,0) 100%) !important;
+
+}
+
+.bg-warning {
+  /* background-color: #ff6347 ; */
+  background: rgb(215,153,20) !important;
+  background: linear-gradient(90deg, rgba(215,153,20,0.9) 0%, rgba(215,153,20,0) 100%) !important;
+}
+
+.card {
+  border-radius: 15%;
+}

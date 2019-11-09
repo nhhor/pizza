@@ -75,6 +75,9 @@ $(document).ready(function(){
   $("form#orderForm").submit(function(event){
     event.preventDefault();
 
+    $(".confirmationSection").hide();
+    $(".confirmationSection").slideDown(1000);
+
     var pizzaSize = $("input:radio[name=pizzaSize]:checked").val();
     var toppingsList = []
     $("input:checkbox[name=pizzaToppings]:checked").each(function(){
@@ -89,6 +92,9 @@ $(document).ready(function(){
     order.addPizza(pizza);
 
     displayPizzas(order)
+
+    $(".orderName").text(firstName);
+
 
     total();
     $(".totalPrice").text(totalPrice.toFixed(2));
