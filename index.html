@@ -20,7 +20,7 @@
         <div class="form-inline">
           <div class="form-group ml-3">
             <label for="firstName">First name:</label>
-            <input type="text" class="form-control mx-1" id="firstName">
+            <input type="text" class="form-control mx-1" id="firstName" required>
           </div>
           <div class="form-group ml-3">
             <label for="lastName">Last name:</label>
@@ -64,8 +64,11 @@
           <div class="row card-group pizzaDisplay">
             <!-- PLACEHOLDER -->
           </div>
-      <h5>Order total: $<span class="totalPrice"></span></h5>
-      <button class="btn btn-primary" type="button">Place your order!</button>
+      <h5 class="bg-secondary">Order total: $<span class="totalPrice"></span></h5>
+      <button id="placeOrder" class="btn btn-primary" type="button">Place your order!</button>
+      <div class="orderPlaced">
+        <h3>Nice! <span class="orderName"></span>, your order should be ready for pick-up in 20 minutes. We can't wait to see you!</h3>
+      </div>
 
     </div>
   </div>

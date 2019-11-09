@@ -4,11 +4,13 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100vw;
+   background-attachment: fixed;
 }
 
 h1 {
   text-align: center;
+  background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1));
+
 }
 
 .orderSection {
@@ -30,6 +32,13 @@ h1 {
   display: none;
 }
 
+.orderPlaced {
+  background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1));
+  border-radius: 5%;
+  padding-top: 20px;
+  display: none;
+}
+
 .bg-danger {
   /* background-color: #ff6347 ; */
   background: rgb(255,100,70) !important;
@@ -45,4 +54,8 @@ h1 {
 
 .card {
   border-radius: 15%;
+}
+
+#placeOrder {
+  margin-bottom: 40px;
 }
